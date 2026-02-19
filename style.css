@@ -649,6 +649,78 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Projects Section */
+.projects {
+    padding: 6rem 10%;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Full Gradient Border */
+.project-card {
+    background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)) padding-box,
+        linear-gradient(135deg, #00d2ff, #d946ef) border-box;
+    border: 2px solid transparent;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)) padding-box,
+        linear-gradient(135deg, #00d2ff, #d946ef) border-box;
+}
+
+/* Remove old pseudo-elements if they exist, or just ensure we don't duplicate logic. 
+   Since we are replacing the block containing .project-card and its pseudos, we don't need to explicitly nullify them 
+   unless they are defined elsewhere. I'm rewriting the main block and removing the separate ::before/::after blocks. */
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-accent);
+    background: linear-gradient(to right, var(--secondary-accent), #d946ef);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.project-card p {
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.project-card .btn-secondary {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    align-self: center;
+    margin-top: auto;
+    border-color: var(--secondary-accent);
+    color: var(--text-color);
+}
+
+.project-card .btn-secondary:hover {
+    background: var(--secondary-accent);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+}
+
 /* Scroll Animation Class */
 .hidden {
     opacity: 0;
@@ -661,7 +733,6 @@ footer {
     transform: translateY(0);
 }
 
-/* Responsive Design */
 /* Responsive Design */
 @media (max-width: 991px) {
     html {
